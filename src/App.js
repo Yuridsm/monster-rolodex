@@ -13,7 +13,7 @@ class App extends Component {
 			monsters: [],
 			searchField: ''
 		};
-		/* We add context to handleChange */
+		
 		this.handleChange = this.handleChange.bind(this);
 	}
 
@@ -23,7 +23,7 @@ class App extends Component {
 		.then(users => this.setState({monsters: users}));
 	}
 
-	handleChange(e) {
+	handleChange = e => {
 		this.setState({ searchField: e.target.value })
 	}
 
@@ -35,6 +35,7 @@ class App extends Component {
 
 		return (
 		    <div className="App">
+		    	<h1> Monsters Rolodex </h1>
 		    	<SearchBox 
 		    		placeholder="Search monster"
 		    		handleChange={this.handleChange}
